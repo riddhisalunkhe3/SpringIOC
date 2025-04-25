@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+      <bean class="com.springConstructorInjectionPractice.Person" name="p1">
+        <constructor-arg name="personId" value="101"/>
+        <constructor-arg name="personName" value="Shanti"/>
+        <constructor-arg name="personCity" value="Pune"/>
+      </bean>
+      <bean class="com.springConstructorInjectionPractice.Person" name="p2">
+        <constructor-arg name="personId" value="102"/>
+        <constructor-arg name="personName" value="Nirvan"/>
+        <constructor-arg name="personCity" value="Karad"/>
+      </bean>
+      <bean class="com.springConstructorInjectionPractice.Person" name="p3">
+        <constructor-arg name="personId" value="103"/>
+        <constructor-arg name="personName" value="Ekansh"/>
+        <constructor-arg name="personCity" value="Mumbai"/>
+      </bean>
+      <bean class="com.springConstructorInjectionPractice.Person" name="p4">
+        <constructor-arg name="personId" value="104"/>
+        <constructor-arg name="personName" value="Vihan"/>
+        <constructor-arg name="personCity" value="Mumbai"/>
+      </bean>
+      <bean class="com.springConstructorInjectionPractice.Person" name="p5">
+        <constructor-arg name="personId" value="105"/>
+        <constructor-arg name="personName" value="Samay"/>
+        <constructor-arg name="personCity" value="Karad"/>
+      </bean>                    
+      <bean class="com.springConstructorInjectionPractice.Orphanage" name="o1">
+        <constructor-arg name="orphanageId" value="1"/>
+        <constructor-arg name="orphanageName" value="Amcha Ghar"/>
+        <constructor-arg name="orphanageCity" value="Mumbai"/>
+        <constructor-arg name="person">
+           <list>
+              <ref bean="p1"/>
+              <ref bean="p2"/>
+           </list>
+        </constructor-arg>
+      </bean>
+      <bean class="com.springConstructorInjectionPractice.Orphanage" name="o2">
+        <constructor-arg name="orphanageId" value="2"/>
+        <constructor-arg name="orphanageName" value="Aasra"/>
+        <constructor-arg name="orphanageCity" value="Pune"/>
+        <constructor-arg name="person">
+           <list>
+              <ref bean="p3"/>
+              <ref bean="p4"/>
+           </list>
+        </constructor-arg>
+      </bean>
+      <bean class="com.springConstructorInjectionPractice.Orphanage" name="o3">
+        <constructor-arg name="orphanageId" value="3"/>
+        <constructor-arg name="orphanageName" value="Bandhilaki"/>
+        <constructor-arg name="orphanageCity" value="Mumbai"/>
+        <constructor-arg name="person">
+           <list>
+              <ref bean="p5"/>
+           </list>
+        </constructor-arg>
+      </bean>                     
+</beans>                           

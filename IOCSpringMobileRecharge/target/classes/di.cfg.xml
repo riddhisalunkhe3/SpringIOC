@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+                           
+          <bean class="com.springIOC.task1.Recharge" name="r1">
+             <property name="name" value="2 GB"/>
+             <property name="price" value="349 rs"/>
+          </bean>
+          
+          <bean class="com.springIOC.task1.Recharge" name="r2">
+             <property name="name" value="1.5 GB"/>
+             <property name="price" value="299 GB"/>
+          </bean>
+          
+          <bean class="com.springIOC.task1.Mobile" name="m1">
+             <property name="moId" value="1"/>
+             <property name="modelName" value="Samsung A12"/>
+             <property name="companyName" value="Samsung"/>
+             <property name="ram" value="8 GB"/>
+             <property name="recharge">
+               <ref bean="r1"/>
+             </property>
+          </bean>       
+          
+           <bean class="com.springIOC.task1.Mobile" name="m2">
+             <property name="moId" value="2"/>
+             <property name="modelName" value="Redmi M34"/>
+             <property name="companyName" value="Redmi"/>
+             <property name="ram" value="16 GB"/>
+             <property name="recharge">
+               <ref bean="r2"/>
+             </property>
+          </bean>           
+</beans>                           

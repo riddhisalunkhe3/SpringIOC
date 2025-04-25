@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+                           
+      <bean class="com.springIOC.Task.Tree" id="t1">
+          <property name="treeId" value="101"></property>
+          <property name="treeName" value="Coconut tree"></property>
+      </bean> 
+      <bean class="com.springIOC.Task.Tree" id="t2">
+          <property name="treeId" value="102"></property>
+          <property name="treeName" value="Baniyan tree"></property>
+      </bean>    
+      <bean class="com.springIOC.Task.Tree" id="t3">
+          <property name="treeId" value="103"></property>
+          <property name="treeName" value="Tamarind tree"></property>
+      </bean>   
+      <bean class="com.springIOC.Task.Tree" id="t4">
+          <property name="treeId" value="104"></property>
+          <property name="treeName" value="Guava tree"></property>
+      </bean>     
+      <bean class="com.springIOC.Task.Bird" id="b1" autowire="byName">
+          <property name="birdId" value="1"></property>
+          <property name="birdName" value="Parrot"></property>
+          <property name="trees">
+             <list>
+               <ref bean="t1"/>
+               <ref bean="t2"/>
+               <ref bean="t3"/>
+               <ref bean="t4"/>
+             </list>
+          </property>
+      </bean>            
+</beans>
+                           

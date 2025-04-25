@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+                            
+ <bean class="com.springIOC.Task.Tree" name="t1">
+    <property name="treeId" value="101"/>
+    <property name="treeName" value="Guava tree"/>
+ </bean>
+ <bean class="com.springIOC.Task.Bird" name="b1">
+    <property name="birdId" value="1"/>
+    <property name="birdName" value="Parrot"/>
+    <property name="tree">
+               <ref bean="t1"/>
+             </property>
+ </bean> 
+   
+ <bean class="com.springIOC.Task.Tree" name="t2">
+    <property name="treeId" value="102"/>
+    <property name="treeName" value="Coconut tree"/>
+ </bean>     
+ <bean class="com.springIOC.Task.Bird" name="b2">
+    <property name="birdId" value="2"/>
+    <property name="birdName" value="Crow"/>
+    <property name="tree">
+               <ref bean="t2"/>
+             </property>
+ </bean>
+  
+ <bean class="com.springIOC.Task.Tree" name="t3">
+    <property name="treeId" value="103"/>
+    <property name="treeName" value="Mango tree"/>
+ </bean>
+ <bean class="com.springIOC.Task.Bird" name="b3">
+    <property name="birdId" value="3"/>
+    <property name="birdName" value="Owl"/>
+    <property name="tree">
+               <ref bean="t3"/>
+             </property>
+ </bean>           
+  
+ <bean class="com.springIOC.Task.Tree" name="t4">
+    <property name="treeId" value="104"/>
+    <property name="treeName" value="Baniyan tree"/>
+ </bean>     
+ <bean class="com.springIOC.Task.Bird" name="b4">
+    <property name="birdId" value="4"/>
+    <property name="birdName" value="Sparrow"/>
+    <property name="tree">
+               <ref bean="t4"/>
+             </property>
+ </bean> 
+   
+ <bean class="com.springIOC.Task.Tree" name="t5">
+    <property name="treeId" value="105"/>
+    <property name="treeName" value="Pine tree"/>
+ </bean>
+ <bean class="com.springIOC.Task.Bird" name="b5">
+    <property name="birdId" value="5"/>
+    <property name="birdName" value="Boot Pracker"/>
+    <property name="tree">
+               <ref bean="t5"/>
+             </property>
+ </bean>                  
+   
+ <bean class="com.springIOC.Task.Tree" name="t6">
+    <property name="treeId" value="106"/>
+    <property name="treeName" value="Tamarind tree"/>
+ </bean>                  
+ <bean class="com.springIOC.Task.Bird" name="b6" >
+    <property name="birdId" value="6"/>
+    <property name="birdName" value="KingFisher"/>
+    <property name="tree">
+               <ref bean="t6"/>
+             </property>
+ </bean>                                                     
+</beans>                           
